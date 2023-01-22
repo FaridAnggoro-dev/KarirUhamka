@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,25 +16,34 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('Welcome');
-});
-Route::get('/masuk', function () {
-    return view('Login');
-});
-Route::get('/daftar', function () {
+})->name('Welcome');
+Route::get('daftar', function () {
     return view('Register');
-});
+})->name('daftar');
 Route::get('lowongan-kerja', function () {
     return view('JobVacancy');
-});
-Route::get('profile-perusahaan', function () {
-    return view('CompanyProfile');
-});
-Route::get('tentang-kami', function () {
-    return view('AboutMe');
-});
-Route::get('berita', function () {
-    return view('Blog');
-});
+})->name('lowongan-kerja');
 Route::get('detail-pekerjaan', function () {
     return view('JobDetail');
+})->name('detail-pekerjaan');
+Route::get('profile-perusahaan', function () {
+    return view('CompanyProfile');
+})->name('profile-perusahaan');
+Route::get('berita', function () {
+    return view('Blog');
+})->name('berita');
+Route::get('tentang-kami', function () {
+    return view('AboutMe');
+})->name('tentang-kami');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+require __DIR__ . '/auth.php';

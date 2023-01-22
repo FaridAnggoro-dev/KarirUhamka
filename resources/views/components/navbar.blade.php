@@ -27,7 +27,7 @@
                 </li>
             </ul>
             <a href="" class="nav-link text-white"><i class="bi bi-person-add"></i> Daftar</a>
-            <a href="" class="nav-link text-white"><i class="bi bi-box-arrow-in-right"></i> Masuk</a>
+            <a href="/login" class="nav-link text-white"><i class="bi bi-box-arrow-in-right"></i> Masuk</a>
         </div>
     </div>
 </nav>
