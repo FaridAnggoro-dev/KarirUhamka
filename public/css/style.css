@@ -18,6 +18,16 @@ body {
 .nav-item.active a {
     font-weight: 600;
 }
+.navbar .user-logged a {
+    color: #211b3d;
+    text-decoration: none;
+}
+
+.navbar .user-logged .user-photo {
+    width: 56px;
+    height: 56px;
+    margin-left: 10px;
+}
 
 #hero {
     background-image: url("/images/gambar.jpg");

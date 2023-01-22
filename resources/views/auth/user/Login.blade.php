@@ -24,7 +24,7 @@
                     </div>
                     <p class="text-center m-auto mt-2 mb-2">atau</p>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary" type="button"><i class="bi bi-google p-3"></i>Masuk dengan Google</button>
+                        <a href="{{route('user.login.google')}}" class="btn btn-primary" type="button"><i class="bi bi-google p-3"></i>Masuk dengan Google</a>
                     </div>
                 </form>
             </div>
